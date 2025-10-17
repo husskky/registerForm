@@ -15,6 +15,8 @@ function validatePassword(password) {
   if (password.length < 8) return false;
   if (!/[0-9]/.test(password)) return false;
   if (!/[A-Z]/.test(password)) return false;
+  if (!/[a-z]/.test(password)) return false;
+  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) return false;
   return true;
 }
 
@@ -29,6 +31,28 @@ function showToast(message, type) {
     toast.remove();
   }, 4000);
 }
+
+const passwordInput = document.getElementById("userPassword");
+const submitBtn = document.querySelector("form button");
+
+passwordInput.addEventListener("input", function () {
+  const value = passwordInput.value;
+
+  const lengthValid = value.length >= 8;
+  const upperValid = /[A-Z]/.test(value);
+  const lowerValid = /[a-z]/.test(value);
+  const numberValid = /[0-9]/.test(value);
+  const symbolValid = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+
+  document.getElementById("length").className = lengthValid ? "valid" : "invalid";
+  document.getElementById("uppercase").className = upperValid ? "valid" : "invalid";
+  document.getElementById("lowercase").className = lowerValid ? "valid" : "invalid";
+  document.getElementById("number").className = numberValid ? "valid" : "invalid";
+  document.getElementById("symbol").className = symbolValid ? "valid" : "invalid";
+
+  const allValid = lengthValid && upperValid && lowerValid && symbolValid && numberValid;
+  //submitBtn.disable = !allValid;
+});
 
 document.getElementById("sub-form").addEventListener("submit", async function (e) {
   e.preventDefault();

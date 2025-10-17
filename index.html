@@ -11,7 +11,19 @@
             <form method="post" id="sub-form">
                 <input type="text" name="userName" placeholder="Enter your name">
                 <input type="email" name="userEmail" placeholder="Enter your email">
-                <input type="password" name="userPassword" placeholder="Enter your password">
+
+                <input type="password" name="userPassword" id="userPassword" placeholder="Enter your password">
+                <div id="password-strength">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li id="length" class="invalid"><strong>At least 8 characters</strong></li>
+                        <li id="uppercase" class="invalid"><strong>An uppercase letter (A-Z)</strong></li>
+                        <li id="lowercase" class="invalid"><strong>A lowercase letter (a-z)</strong></li>
+                        <li id="number" class="invalid"><strong>A number (0-9)</strong></li>
+                        <li id="symbol" class="invalid"><strong>A symbol (!@#$%^&*)</strong></li>
+                    </ul>
+                </div>
+
                 <input type="tel" name="userPhone" placeholder="Enter your phone number">
                 <button type="submit">Submit</button>
             </form>
