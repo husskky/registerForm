@@ -1,5 +1,6 @@
 //const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZ1A2Jb8nTVKn-y9VadBPSyjo6iF-HU9bYswSi9ucrBX96ERoql23igAqVXuojeDM/exec"
 const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx25LEqy23WpA2VvzpKW5U9ZpFTTYH7lz8N1wwWt2s9DXHirIL34LPWlwnUKg8cYiE/exec"
+
 function validateEmail(email) {
   email = email.trim();
   if (!email.includes("@")) return false;
