@@ -94,3 +94,12 @@ document.getElementById("sub-form").addEventListener("submit", async function (e
   }
 });
 
+const form = document.getElementById("sub-form");
+
+form.addEventListener("reset", function () {
+  document.getElementById("length").className = "invalid";
+  document.getElementById("uppercase").className = "invalid";
+  document.getElementById("lowercase").className = "invalid";
+  document.getElementById("number").className = "invalid";
+  document.getElementById("symbol").className = "invalid";
+});
