@@ -69,7 +69,7 @@ document.getElementById("sub-form").addEventListener("submit", async function (e
     return;
   }
   if (!validatePassword(data.userPassword)) {
-    showToast("Password must be at least 8 characters, include a number and an uppercase letter.", "error");
+    showToast("Password must be at least 8 characters, include a number, symbol, uppercase and lowercase letter.", "error");
     return;
   }
 
