@@ -103,3 +103,9 @@ form.addEventListener("reset", function () {
   document.getElementById("number").className = "invalid";
   document.getElementById("symbol").className = "invalid";
 });
+
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("light-mode", themeToggle.checked);
+});

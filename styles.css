@@ -134,6 +134,109 @@ form button:active {
   background: rgba(239, 68, 68, 0.9); 
 }
 
+.switch {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index: 10000;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00ffff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff00ff, #00ffff);
+  color: #0a0a14;
+  z-index: 10000;
+  transition: filter 0.2s;
+}
+#theme-toggle:hover {
+  filter: brightness(1.1);
+}
+
+body.light-mode {
+  background: #f5f5f5;
+  color: #222;
+}
+
+body.light-mode .container {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode form input {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+body.light-mode form input:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 8px #00aaff;
+  background: #fff;
+}
+
+body.light-mode form button {
+  background: linear-gradient(135deg, #0077ff, #00ffaa);
+  color: #fff;
+}
+
+body.light-mode #password-strength {
+  color: #444;
+}
+
+body.light-mode #password-strength li.valid {
+  color: #007f3f;
+}
+
+body.light-mode #password-strength li.invalid {
+  color: #cc0000;
+}
+
+
+
 @keyframes slideIn {
   from { transform: translateX(120%); opacity: 0; }
   to   { transform: translateX(0); opacity: 1; }
